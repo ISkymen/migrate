@@ -265,7 +265,7 @@ function _drush_migrate_tools_execute_migration(MigrationInterface $migration, $
 
   if (drush_get_option('execute-dependencies')) {
     if ($required_IDS = $migration->get('requirements')) {
-      $manager = \Drupal::service('plugin.manager.config_entity_migration');
+      $manager = \Drupal::service('plugin.manager.migration');
       $required_migrations = $manager->createInstances($required_IDS);
       $dependency_options = array_merge($options, ['is_dependency' => TRUE]);
       array_walk($required_migrations, __FUNCTION__, $dependency_options);
