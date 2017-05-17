@@ -15,7 +15,7 @@ migration_tags:
 source:
   plugin: csv
   # Full path to the file.
-  path: modules/custom/sky_migrate/csv/export1.csv
+  path: modules/custom/sky_migrate/csv/export2.csv
 
   delimiter: '|'
   enclosure: '"'
@@ -35,16 +35,18 @@ source:
     id: Unique identifier for the program as in the data source.
     title: Name of the program.
     body: A description for the program.
+    tags: Tags for content type
+    category: Category for content type
+    date: Data creations
 
-
-process:
-  # The content (node) type we are creating is 'people'.
   constants:
     bool_0: 0
     bool_1: 1
     uid_root: 1
-    format: basic_html
+    format: full_html
 
+process:
+  # The content (node) type we are creating is 'people'.
   type:
     plugin: default_value
     default_value: blog_post
@@ -52,10 +54,39 @@ process:
   # field and the corresponding field name from above, and the values will be
   # copied in.
   title: title
+
   'body/value': body
-  'body/format': constants/format
+  'body/format':
+     plugin: default_value
+     default_value: full_html
 
+  field_blog_tags:
+    -
+      plugin: explode
+      source: tags
+      delimiter: ', '
+      limit: 100
+    -
+      plugin: entity_generate
+#      entity_type: taxonomy_term
+#      bundle_key: vid
+#      bundle: tags
+#      value_key: name
 
+  field_blog_category:
+    -
+      plugin: explode
+      source: category
+      delimiter: ', '
+      limit: 100
+    -
+      plugin: entity_generate
+#      entity_type: taxonomy_term
+#      bundle_key: vid
+#      bundle: categories
+#      value_key: name
+
+  created: date
 
 destination:
   # Here we're saying that each row of data (line from the CSV file) will be
