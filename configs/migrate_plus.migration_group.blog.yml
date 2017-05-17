@@ -1,0 +1,15 @@
+uuid: b64481f2-ea73-4287-8298-518e66a52c9a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - sky_migrate
+_core:
+  default_config_hash: evGz6K_12BO62jYbXb9Q6RxWDrbWpQMQoajbJ3SpZIE
+id: blog
+label: 'Blog''s migration'
+description: 'Migrations blogs from csv to Drupal 8.'
+source_type: 'CSV files'
+module: null
+shared_configuration: null
