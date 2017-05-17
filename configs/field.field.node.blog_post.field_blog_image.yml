@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_blog_image
-    - node.type.blog
+    - node.type.blog_post
   module:
     - image
 id: node.blog.field_blog_image

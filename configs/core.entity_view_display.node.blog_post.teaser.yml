@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.blog.body
-    - node.type.blog
+    - field.field.node.blog_post.body
+    - node.type.blog_post
   module:
     - text
     - user

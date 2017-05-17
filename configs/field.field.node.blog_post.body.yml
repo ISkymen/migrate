@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.blog
+    - node.type.blog_post
   module:
     - text
 id: node.blog.body

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_blog_category
-    - node.type.blog
+    - node.type.blog_post
     - taxonomy.vocabulary.categories
 id: node.blog.field_blog_category
 field_name: field_blog_category
