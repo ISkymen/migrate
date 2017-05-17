@@ -12,9 +12,9 @@ dependencies:
     - image
     - text
     - user
-id: node.blog.default
+id: node.blog_post.default
 targetEntityType: node
-bundle: blog
+bundle: blog_post
 mode: default
 content:
   body:

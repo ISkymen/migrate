@@ -7,7 +7,7 @@ dependencies:
     - node.type.blog_post
   module:
     - text
-id: node.blog.body
+id: node.blog_post.body
 field_name: body
 entity_type: node
 bundle: blog_post

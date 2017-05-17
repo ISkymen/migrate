@@ -9,9 +9,9 @@ dependencies:
   module:
     - text
     - user
-id: node.blog.teaser
+id: node.blog_post.teaser
 targetEntityType: node
-bundle: blog
+bundle: blog_post
 mode: teaser
 content:
   body:
@@ -25,4 +25,7 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_blog_category: true
+  field_blog_image: true
+  field_blog_tags: true
