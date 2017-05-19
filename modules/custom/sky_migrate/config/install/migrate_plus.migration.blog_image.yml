@@ -13,7 +13,7 @@ migration_tags:
 # Source.
 source:
   plugin: csv
-  path: modules/custom/sky_migrate/csv/export3.csv
+  path: modules/custom/sky_migrate/csv/export4.csv
 
   delimiter: '|'
   enclosure: '"'
@@ -69,7 +69,12 @@ process:
   #
   # Alternatively, if we wish to name them after some other
   # column, we can do it here.
-  filename: image
+  filename:
+    plugin: substr
+    source: image
+    start: 1
+
+
   uri:
     plugin: file_copy
     source:

@@ -7,7 +7,7 @@ migration_tags:
 source:
   plugin: csv
   # Full path to the file.
-  path: modules/custom/sky_migrate/csv/export3.csv
+  path: modules/custom/sky_migrate/csv/export4.csv
 
   delimiter: '|'
   enclosure: '"'
@@ -80,9 +80,13 @@ process:
     default_value: 1
 
   'field_blog_image/target_id':
-    plugin: migration
-    migration: blog_image
-    source: image
+    -
+      plugin: skip_on_empty
+      method: process
+      source: image
+    -
+      plugin: migration
+      migration: _imageUrl
 
 destination:
   # Here we're saying that each row of data (line from the CSV file) will be
